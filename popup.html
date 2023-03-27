@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Eyes - popup</title>
+    <link rel="icon" href="./img/favicon/Project_eyes.svg">
+    <link rel="stylesheet" href="./bootstrap-5.1.3-dist/css/bootstrap.css">
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/theme.css">
+    <!-- js -->
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF" crossorigin="anonymous"></script>
+</head>
+<body>
+    
+    <section class="popup">
+        <div class="pop-header">
+            <h1>결함상세관리</h1>
+            <a href="#" class="pop-close"></a>
+        </div>
+        <div class="pop-body">
+            <table>
+                <colgroup>
+                    <col width="140px">
+                    <col width="*">
+                    <col width="140px">
+                    <col width="*">
+                </colgroup>
+                <tbody>
+                    <tr>
+                        <th>프로그램/케이스ID</th>
+                        <td>
+                            <input type="text" style="width: calc(100% - 54px); float:left">
+
+                            <!-- 모달예시입니다. MODAl TYPE 01 -->
+                            <button class="btn btn-filter-p" style="min-width: 50px; margin-left: 4px; float:left"
+                            data-toggle="modal" data-target="#exampleModal">
+                                검색
+                            </button>
+                        </td>
+                        <th>
+                            프로그램/케이스명
+                        </th>
+                        <td>
+                            <input type="text" placeholder="입력하세요">
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>결함등록자</th>
+                        <td>
+                            <input type="text" style="width: 59px;">
+                            <input type="text" placeholder="가이드 텍스트" style="width: calc(100% - 64px);" >
+                        </td>
+                        <th>옵션선택</th>
+                        <td>
+                            <select name="" id="">
+                                <option value="옵션1">옵션1</option>
+                                <option value="옵션2">옵션2</option>
+                                <option value="옵션3">옵션3</option>
+                            </select>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <hr>
+            <h2>
+                결함내역
+            </h2>
+            <table>
+                <colgroup>
+                    <col width="140px">
+                    <col width="*">
+                    <col width="140px">
+                    <col width="*">
+                </colgroup>
+                <tbody>
+                    <tr>
+                        <th>결함유형</th>
+                        <td>
+                            <select name="" id="">
+                                <option value="옵션1">옵션1</option>
+                                <option value="옵션2">옵션2</option>
+                                <option value="옵션3">옵션3</option>
+                            </select>
+                        </td>
+                        <th></th>
+                        <td>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>
+                            결함내용
+                        </th>
+                        <td colspan="3">
+                            <textarea name="" id="" cols="30" rows="10" placeholder="결함내용을 입력해주세요"></textarea>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>첨부파일</th>
+                        <td colspan="3">
+                            <div class="file-Attach">
+                                <label for="file-upload-btn">
+                                    <input type="file" id="file-upload-btn">
+                                </label>
+                                <div class="upload-nameWrap">
+                                    <input type="text" class="upload-name" disabled>
+                                    <a href="#" class="upload-delete" onclick="alert('delete-file')"></a>
+                                </div>
+                                <button class="btn btn-line-p">다운로드</button>
+                            </div>
+                            <script>
+                                $("#file-upload-btn").on('change',function(){
+                                    var fileName = $("#file-upload-btn").val();
+                                    $(".upload-name").val(fileName);
+                                    $(".upload-delete").css('display','block');
+                                });
+                            </script>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <hr>
+            <h2>
+                조치내역
+            </h2>
+            <table>
+                <colgroup>
+                    <col width="140px">
+                    <col width="*">
+                    <col width="140px">
+                    <col width="*">
+                </colgroup>
+                <tbody>
+                    <tr>
+                        <th>결함유형</th>
+                        <td>
+                            <select name="" id="">
+                                <option value="옵션1">옵션1</option>
+                                <option value="옵션2">옵션2</option>
+                                <option value="옵션3">옵션3</option>
+                            </select>
+                        </td>
+                        <th>처리상태</th>
+                        <td>
+                            <select name="" id="">
+                                <option value="옵션1">옵션1</option>
+                                <option value="옵션2">옵션2</option>
+                                <option value="옵션3">옵션3</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>조치예정일자</th>
+                        <td>
+                            <div class="input-dateWrap">
+                                <input type="date">
+                            </div>
+                        </td>
+                        <th>
+                            조치담당자
+                        </th>
+                        <td>
+                            <div class="input-searchWrap">
+                                <input type="text" placeholder="입력하세요" disabled>
+                                <button class="search-btn" data-toggle="modal" data-target="#exampleModal-2"></button>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>
+                            조치내용
+                        </th>
+                        <td colspan="3">
+                            <textarea name="" id="" cols="30" rows="10" placeholder=""></textarea>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="pop-footer">
+            <span>조치담당자, 업무PL 변경시 변경자명을 변경후 엔터키 입력시 조회됨.</span>
+            <button class="btn btn-filter-b">닫기</button>
+            <button class="btn btn-filter-p">저장</button>
+        </div>
+    </section>
+
+    
+
+
+    <!-- Modal Type 01 -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-wrap">
+                <div class="modal-card" style="width:580px;">
+                    <div class="modal-top">
+                        <h1>
+                            테스트 케이스 검색
+                        </h1>
+                    </div>
+                    <div class="modal-con">
+                        <!-- 필터영역 -->
+                        <section class="filter">
+                            <ul class="filter-con clear-fix">
+                                <li class="filter-item">
+                                    <label for="">화면/프로그램ID</label>
+                                    <div class="item-con">
+                                        <!-- 필요에 따라 인풋이나 셀렉트의 공간이 필요한 경우는 inline 으로 width 선언해주시면 됩니다 -->
+                                        <select name="" id="" style="width: 160px;">
+                                            <option value="PMS 시스템 구축">PMS 시스템 구축</option>
+                                            <option value="옵션1">옵션1</option>
+                                        </select>
+                                    </div>
+                                </li>
+                                <li class="filter-item">
+                                    <label for="">케이스명</label>
+                                    <div class="item-con">
+                                        <select name="" id="">
+                                            <option value="전체">전체</option>
+                                            <option value="PMS 시스템 구축">PMS 시스템 구축</option>
+                                            <option value="옵션1">옵션1</option>
+                                        </select>
+                                    </div>
+                                </li>
+                            </ul>
+                            <ul class="filter-btn">
+                                <div class="btn btn-filter-p">
+                                    <a href="#">조회</a>
+                                </div>
+                            </ul>
+                        </section>
+                        <div class="page-contents">
+                            <!-- 그리드 컨텐츠 -->
+                            <!-- gridWrap 에 inline으로 style 선언하지 않으면 자동 width 100%로 적용됩니다. 화면을 초과하여 스크롤이 필요한 경우는 min-width로 최소크기 설정해주세요.
+                            min-width로 최소크기 설정할 때에는 gridWrap 컨테이너로 .page-contents가 필요합니다. -->
+                            <div class="gridWrap">
+                                <table class="grid">
+                                    <colgroup>
+                                        <!-- 그리드에서 컬럼 필요 넓이만큼 col에 인라인으로 width 설정해주세요. 별도 선언하지 않는 경우 같은 넓이로 등분됩니다. -->
+                                        <col width="100px">
+                                        <col width="30%">
+                                        <col width="*">
+                                    </colgroup>
+                                    <thead>
+                                        <tr>
+                                            <th>차수</th>
+                                            <th>테스트케이스ID</th>
+                                            <th>테스트케이스명</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>
+                                                10201
+                                            </td>
+                                            <td>
+                                                ##########
+                                            </td>
+                                            <td>
+                                                테스트케이스명테스트케이스명테스트테스트케이스명테스트테스트케이스명테스트
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                10201
+                                            </td>
+                                            <td>
+                                                ##########
+                                            </td>
+                                            <td>
+                                                테스트케이스명테스트케이스명테스트테스트케이스명테스트테스트케이스명테스트
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                10201
+                                            </td>
+                                            <td>
+                                                ##########
+                                            </td>
+                                            <td>
+                                                테스트케이스명테스트케이스명테스트테스트케이스명테스트테스트케이스명테스트
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                10201
+                                            </td>
+                                            <td>
+                                                ##########
+                                            </td>
+                                            <td>
+                                                테스트케이스명테스트케이스명테스트테스트케이스명테스트테스트케이스명테스트
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-bottom">
+                        <div class="btn btn-filter-b" data-dismiss="modal">
+                            <a href="#">닫기</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Modal Type 02 -->
+    <div class="modal fade" id="exampleModal-2" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-wrap">
+                <div class="modal-card" style="width:310px;">
+                    <div class="modal-top">
+                        <h1>
+                           직원검색
+                        </h1>
+                    </div>
+                    <div class="modal-con">
+                        <!-- 그리드 컨텐츠 -->
+                        <!-- gridWrap 에 inline으로 style 선언하지 않으면 자동 width 100%로 적용됩니다. 화면을 초과하여 스크롤이 필요한 경우는 min-width로 최소크기 설정해주세요.
+                        min-width로 최소크기 설정할 때에는 gridWrap 컨테이너로 .page-contents가 필요합니다. -->
+                        <div class="gridWrap">
+                            <table class="grid">
+                                <colgroup>
+                                    <!-- 그리드에서 컬럼 필요 넓이만큼 col에 인라인으로 width 설정해주세요. 별도 선언하지 않는 경우 같은 넓이로 등분됩니다. -->
+                                    <col width="130px">
+                                    <col width="*">
+                                </colgroup>
+                                <thead>
+                                    <tr>
+                                        <th>직원번호</th>
+                                        <th>직원명</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>
+                                            D102010909
+                                        </td>
+                                        <td>
+                                            홍길동
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            D102010909
+                                        </td>
+                                        <td>
+                                            홍길동
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            D102010909
+                                        </td>
+                                        <td>
+                                            홍길동
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            D102010909
+                                        </td>
+                                        <td>
+                                            홍길동
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            D102010909
+                                        </td>
+                                        <td>
+                                            홍길동
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            D102010909
+                                        </td>
+                                        <td>
+                                            홍길동
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            D102010909
+                                        </td>
+                                        <td>
+                                            홍길동
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            D102010909
+                                        </td>
+                                        <td>
+                                            홍길동
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="modal-bottom">
+                        <div class="btn btn-filter-b" data-dismiss="modal">
+                            <a href="#">닫기</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
